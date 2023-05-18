@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:background="#CDF6BF"
+        tools:context=".GardenActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rc_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#519D6B"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ic_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:padding="16dp"
+                android:src="@drawable/ic_back_"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garden 1"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cs_manu"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rc_toolbar">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_btn_temp"
+                android:drawableStart="@drawable/thermometer"
+                android:padding="16dp"
+                android:text="Actual temp (℃)"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_btn_humi"
+                android:drawableStart="@drawable/humidity_percentage"
+                android:padding="16dp"
+                android:text="Actual humi (%)"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="103dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_tv_temp"
+                android:gravity="center"
+                android:textColor="@color/white"
+
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_loading"
+                android:padding="8dp"
+                android:text="Lamp Status:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/tv_temp" />
+
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:id="@+id/imv_lamp_on"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:src="@drawable/densang1"
+                app:layout_constraintEnd_toEndOf="@+id/tv_light_off"
+                app:layout_constraintStart_toStartOf="@id/textView4"
+                app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:id="@+id/imv_lamp_off"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:src="@drawable/dentoi"
+                app:layout_constraintEnd_toEndOf="@+id/tv_light_off"
+                app:layout_constraintStart_toStartOf="@id/textView4"
+                app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/bg_loading"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Pump Status:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_temp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/pumpoff"
+                app:layout_constraintEnd_toEndOf="@+id/tv_pump_off"
+                app:layout_constraintStart_toStartOf="@id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/imv_lamp_on" />
+
+            <ImageView
+                android:layout_marginTop="8dp"
+                android:id="@+id/imv_pump_on"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+
+                android:src="@mipmap/ic_pump_foreground"
+                app:layout_constraintEnd_toEndOf="@+id/tv_pump_off"
+                app:layout_constraintStart_toStartOf="@id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/tv_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_btn_temp"
+                android:padding="4dp"
+                android:text="LAMP ON"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/imv_lamp_on" />
+
+            <TextView
+                android:id="@+id/tv_light_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_btn_temp"
+                android:padding="4dp"
+                android:text="LAMP OFF"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_light"
+                app:layout_constraintTop_toTopOf="@+id/tv_light" />
+
+            <TextView
+                android:id="@+id/tv_pump"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/bg_btn_humi"
+                android:padding="4dp"
+                android:text="PUMP ON"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_light"
+
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toTopOf="@+id/tv_light" />
+
+            <TextView
+                android:id="@+id/tv_pump_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_btn_humi"
+                android:padding="4dp"
+                android:text="PUMP OFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_light"
+
+                app:layout_constraintStart_toEndOf="@+id/tv_pump"
+                app:layout_constraintTop_toTopOf="@+id/tv_light" />
+
+
+            <TextView
+                android:id="@+id/tv_humi"
+                android:layout_width="103dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_tv_humi"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_btn"
+            android:padding="8dp"
+            android:shadowColor="@color/black"
+            android:text="Auto"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_next"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_next"
+            app:layout_constraintVertical_bias="0.575" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cs_manu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_btn"
+                    android:drawableStart="@drawable/manage_history"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Set Time 1 :"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/cns_config1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config1" />
+
+
+                <TextView
+                    android:id="@+id/btnok1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_btn2"
+                    android:padding="8dp"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cns_config1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="#CDF6BF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnok1"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/tv_settime1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Time"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_temp1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Temp (℃) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_settime1"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_settime1" />
+
+
+                    <EditText
+                        android:id="@+id/edt_humi1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Humi ( % ) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_temp1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_btn"
+                    android:drawableStart="@drawable/manage_history"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Set Time 2 :"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config2" />
+
+
+                <TextView
+                    android:id="@+id/btnok2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_btn2"
+                    android:padding="8dp"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cns_config2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="#CDF6BF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnok2"
+                    app:layout_constraintStart_toEndOf="@+id/tv2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/tv_settime2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Time"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_temp2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Temp (℃) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_settime2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_settime2" />
+
+
+                    <EditText
+                        android:id="@+id/edt_humi2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Humi ( % ) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_temp2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <TextView
+
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="4dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/bg_btn"
+                    android:drawableStart="@drawable/manage_history"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Set Time 3 :"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config3" />
+
+
+                <TextView
+                    android:id="@+id/btnok3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_btn2"
+                    android:padding="8dp"
+                    android:text="OK"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cns_config3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cns_config3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="#CDF6BF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnok3"
+                    app:layout_constraintStart_toEndOf="@+id/tv3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <TextView
+                        android:id="@+id/tv_settime3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Time"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edt_temp3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Temp (℃) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_settime3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_settime3" />
+
+
+                    <EditText
+                        android:id="@+id/edt_humi3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+
+                        android:background="@drawable/bg_constrain"
+                        android:gravity="center"
+                        android:hint="Set Humi ( % ) :"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edt_temp3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/tv_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_next_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
